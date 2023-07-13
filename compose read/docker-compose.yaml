@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  shard1read1:
+    container_name: replicasetRead1
+    image: mongo
+    command: mongod  --replSet replicaRead1 --port 27017 
+    ports:
+      - 27025:27017
+    volumes:
+      - ./replicasetRead1:/data/dbr
+
+  replicaset2:
+    container_name: replicasetRead2
+    image: mongo
+    command: mongod  --replSet replicaRead1 --port 27017 
+    ports:
+      - 27026:27017
+    volumes:
+      - ./replicasetRead2:/data/dbr
+
+  replicaset3:
+    container_name: replicasetRead3
+    image: mongo
+    command: mongod  --replSet replicaRead1 --port 27017 
+    ports:
+      - 27027:27017
+    volumes:
+      - ./replicasetRead3:/data/dbr
+
+volumes:
+  replicasetRead1: {}
+  replicasetRead2: {}
+  replicasetRead3: {}

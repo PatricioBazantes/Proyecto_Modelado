@@ -1,0 +1,111 @@
+version: '3'
+services:
+  master1:
+    image: mongo:latest
+    container_name: master1
+    command: mongod --replSet rs0 --shardsvr --bind_ip_all
+    volumes:
+      - ./data/master1:/data/db
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: '256M'
+    ports:
+      - 27017:27017
+    networks:
+      - dbnet
+
+  master2:
+    image: mongo:latest
+    container_name: master2
+    command: mongod --replSet rs0 --shardsvr --bind_ip_all
+    volumes:
+      - ./data/master2:/data/db
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: '256M'
+    ports:
+      - 27018:27017
+    networks:
+      - dbnet
+
+  slave1_1:
+    image: mongo:latest
+    container_name: slave1_1
+    command: mongod --replSet rs0 --shardsvr --slave --source master1
+    volumes:
+      - ./data/slave1_1:/data/db
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: '256M'
+    ports:
+      - 27020:27017
+    networks:
+      - dbnet
+
+  slave1_2:
+    image: mongo:latest
+    container_name: slave1_2
+    command: mongod --replSet rs0 --shardsvr --slave --source master1
+    volumes:
+      - ./data/slave1_2:/data/db
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: '256M'
+    ports:
+      - 27021:27017
+    networks:
+      - dbnet
+
+  slave2_1:
+    image: mongo:latest
+    container_name: slave2_1
+    command: mongod --replSet rs0 --shardsvr --slave --source master2
+    volumes:
+      - ./data/slave2_1:/data/db
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: '256M'
+    ports:
+      - 27022:27017
+    networks:
+      - dbnet
+
+  slave2_2:
+    image: mongo:latest
+    container_name: slave2_2
+    command: mongod --replSet rs0 --shardsvr --slave --source master2
+    volumes:
+      - ./data/slave2_2:/data/db
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: '256M'
+    ports:
+      - 27023:27017
+    networks:
+      - dbnet
+
+  admin:
+    image: mongo-express:latest
+    container_name: admin
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=master1,master2,master3
+      - ME_CONFIG_MONGODB_PORT=27017
+    ports:
+      - 8081:8081
+    networks:
+      - dbnet
+
+networks:
+  dbnet:

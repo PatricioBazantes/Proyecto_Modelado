@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Editar Documento - Student Mental Health</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Editar Documento</h1>
+    <form id="edit-form" class="my-3" method="POST" action="/update_data">
+      <input type="hidden" name="timestamp" value="{{ data.timestamp }}">
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select class="form-control" id="gender" name="gender" required>
+          <option value="male" {% if data.gender == "male" %}selected{% endif %}>Male</option>
+          <option value="female" {% if data.gender == "female" %}selected{% endif %}>Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="text" class="form-control" id="age" name="age" value="{{ data.age }}" required>
+      </div>      
+      <div class="form-group">
+        <label for="course">Course:</label>
+        <input type="text" class="form-control" id="course" name="course" value="{{ data.course }}" required>
+      </div>
+      <div class="form-group">
+        <label for="marital_status">Marital Status:</label>
+        <select class="form-control" id="marital_status" name="marital_status" required>
+          <option value="Yes" {% if data.marital_status == "Yes" %}selected{% endif %}>Si</option>
+          <option value="No" {% if data.marital_status == "No" %}selected{% endif %}>No</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="depression">Depression:</label>
+        <select class="form-control" id="depression" name="depression" required>
+          <option value="Yes" {% if data.depression == "Yes" %}selected{% endif %}>Si</option>
+          <option value="No" {% if data.depression == "No" %}selected{% endif %}>No</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="anxiety">Anxiety:</label>
+        <select class="form-control" id="anxiety" name="anxiety" required>
+          <option value="Yes" {% if data.anxiety == "Yes" %}selected{% endif %}>Si</option>
+          <option value="No" {% if data.anxiety == "No" %}selected{% endif %}>No</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="panic_attack">Panic Attack:</label>
+        <select class="form-control" id="panic_attack" name="panic_attack" required>
+          <option value="Yes" {% if data.panic_attack == "Yes" %}selected{% endif %}>Si</option>
+          <option value="No" {% if data.panic_attack == "No" %}selected{% endif %}>No</option>
+        </select>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+    <a href="/">Volver</a>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

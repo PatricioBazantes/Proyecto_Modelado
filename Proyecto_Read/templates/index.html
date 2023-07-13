@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Student Mental Health</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Student Mental Health</h1>
+    <div class="form-group">
+      <label for="age-filter">Filtrar por Edad:</label>
+      <select class="form-control" id="age-filter">
+        <option value="">Todos</option>
+      </select>
+    </div>
+    <button id="filter-btn" class="btn btn-primary">Filtrar</button>
+    <button id="clear-filter-btn" class="btn btn-secondary">Deshacer Filtro</button>
+    <br><br>
+    <h2>Lista de documentos de alumnos</h2>
+    <br>
+    <table id="data-table" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Timestamp</th>
+          <th>Gender</th>
+          <th>Age</th>
+          <th>Course</th>
+          <th>Marital Status</th>
+          <th>Depression</th>
+          <th>Anxiety</th>
+          <th>Panic Attack</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Variable global para almacenar los datos originales
+    var originalData;
+
+    // Función para cargar los datos al cargar la página
+    function loadData() {
+      $.getJSON('/get_data', function (response) {
+        if (response.status === 'success') {
+          var data = response.data;
+          originalData = data;
+          var tbody = $('#data-table tbody');
+          var ageFilter = $('#age-filter');
+          var ages = [];
+          tbody.empty();
+          ageFilter.empty();
+          ageFilter.append('<option value="">Todos</option>');
+          for (var i = 0; i < data.length; i++) {
+            var item = data[i];
+            var itemId = item._id;
+            tbody.append('<tr>' +
+              '<td>' + item.timestamp + '</td>' +
+              '<td>' + item.gender + '</td>' +
+              '<td>' + item.age + '</td>' +
+              '<td>' + item.course + '</td>' +
+              '<td>' + item.marital_status + '</td>' +
+              '<td>' + item.depression + '</td>' +
+              '<td>' + item.anxiety + '</td>' +
+              '<td>' + item.panic_attack + '</td>' +
+              '</tr>');
+            if (!ages.includes(item.age)) {
+              ages.push(item.age);
+              ageFilter.append('<option value="' + item.age + '">' + item.age + '</option>');
+            }
+          }
+        } else {
+          alert('Error: ' + response.message);
+        }
+      });
+    }
+
+    // Cargar datos al iniciar la página
+    $(document).ready(function () {
+      loadData();
+    });
+
+    $('#data-table').on('click', '.edit-btn', function () {
+      var itemId = $(this).data('id');
+      window.location.href = '/edit/' + itemId;
+    });
+
+    // Botón Filtrar
+    $('#filter-btn').click(function () {
+      var selectedAge = $('#age-filter').val();
+      loadDataByAge(selectedAge);
+    });
+
+    // Botón Deshacer Filtro
+    $('#clear-filter-btn').click(function () {
+      $('#age-filter').val('');
+      loadDataByAge('');
+    });
+
+    // Función para cargar los datos filtrados por edad
+    function loadDataByAge(age) {
+      var data = originalData;
+      var tbody = $('#data-table tbody');
+      tbody.empty();
+      for (var i = 0; i < data.length; i++) {
+        var item = data[i];
+        if (age === "" || item.age.toString() === age) {
+          tbody.append('<tr>' +
+            '<td>' + item.timestamp + '</td>' +
+            '<td>' + item.gender + '</td>' +
+            '<td>' + item.age + '</td>' +
+            '<td>' + item.course + '</td>' +
+            '<td>' + item.marital_status + '</td>' +
+            '<td>' + item.depression + '</td>' +
+            '<td>' + item.anxiety + '</td>' +
+            '<td>' + item.panic_attack + '</td>' +
+            '</tr>');
+        }
+      }
+    }
+
+
+  </script>
+
+</body>
+
+</html>
