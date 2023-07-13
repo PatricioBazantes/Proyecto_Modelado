@@ -1,58 +1,32 @@
-Para crear el bloque de contenedores de la izquierda se debe ejecutar el docker-compose.yaml que se encuentra 
-en la carpeta compose crud, depende de los equipos se podria tunear los contenedores.
-Abrimos un terminal y cambiamos a la ruta de la carpeta compose crud
-Ingresamos el comando: docker compose up -d 
-Ahora se abran creado el conjunto de la izquierda de dockers de mongo
-Vamos a ingresar por el terminal al contenedor de mongo principal con el comando:
-mongosh mongodb://<Direccion_Ip>:27020
-debes reemplazar con tu ip actual.
-Ahora una vez ingresado debemos copiar lo siguiente:
-rs.initiate(
-  {
-    _id: "replicaRead1",
-    members: [
-      { _id : 0, host : <Direccion_Ip>:27020" },
-      { _id : 1, host : <Direccion_Ip>:27021" },
-      { _id : 2, host : <Direccion_Ip>:27022" }
-    ]
-  }
-)
-Ahora ejecutamos: rs.status()
-Si al ejecutar rs.status() todos salen como secondary debemos modificar las prioridades
+# Replicación, MongoDB, Flask API, Bootstrap
 
-conf = rs.config();
-conf.members[0].priority = 2;
-rs.reconfig(conf);
+####Autores: Bazantes Patricio, Macas Anthony, Tamayo Pablo.
 
-rs.status()
+------------
 
-Para crear el bloque de contenedores de la derecha se debe ejecutar el docker-compose.yaml que se encuentra 
-en la carpeta compose read, depende de los equipos se podria tunear los contenedores.
-Abrimos un terminal y cambiamos a la ruta de la carpeta compose read
-Ingresamos el comando: docker compose up -d 
-Ahora se abran creado el conjunto de la derecha de dockers de mongo
-Vamos a ingresar por el terminal al contenedor de mongo principal con el comando:
-mongosh mongodb://<Direccion_Ip>:27025
-debes reemplazar con tu ip actual.
-Ahora una vez ingresado debemos copiar lo siguiente:
-rs.initiate(
-  {
-    _id: "replicaRead1",
-    members: [
-      { _id : 0, host : <Direccion_Ip>:27025" },
-      { _id : 1, host : <Direccion_Ip>:27026" },
-      { _id : 2, host : <Direccion_Ip>:27027" }
-    ]
-  }
-)
-Ahora ejecutamos: rs.status()
-Si al ejecutar rs.status() todos salen como secondary debemos modificar las prioridades
+Este proyecto consiste en un proceso ETL para extraer datos de una base de datos MongoDB, transformarlos según sea necesario y cargarlos en una nueva estructura de datos. Además, incluye dos aplicaciones web: una aplicación de CRUD (Crear, Leer, Actualizar, Eliminar) y una aplicación de lectura de datos.
 
-conf = rs.config();
-conf.members[0].priority = 2;
-rs.reconfig(conf);
+##Proceso ETL
+El proceso ETL se encarga de la extracción, transformación y carga de datos desde una base de datos MongoDB. Aquí se muestra el flujo del proceso:
 
-rs.status()
+- Extracción: Los datos se extraen de la base de datos MongoDB utilizando la biblioteca PyMongo. La conexión a la base de datos se realiza mediante la siguiente URL: mongodb://192.168.1.4:27021/. Los datos se extraen de la colección health en la base de datos ProyectV1.
 
+- Transformación: Durante la transformación, se aplican las modificaciones necesarias a los datos extraídos.
 
+- Carga: Los datos transformados se cargan en una nueva estructura de datos o se almacenan en una base de datos diferente según los requisitos del proyecto. En este caso, los datos se cargan en una colección MongoDB.
 
+##Aplicaciones Web
+El proyecto incluye dos aplicaciones web desarrolladas con Flask, un framework de Python para aplicaciones web:
+
+###Aplicación de CRUD
+Esta aplicación permite realizar operaciones de Crear, Leer, Actualizar y Eliminar (CRUD) sobre los datos almacenados en la colección MongoDB.
+
+Características de la aplicación:
+
+Agregar Documento: Permite agregar un nuevo documento a la base de datos. Los datos se ingresan a través de un formulario HTML y se guardan en la colección health.
+
+Editar Documento: Permite editar un documento existente en la base de datos. Se selecciona el documento a editar y se presentan los campos en un formulario HTML prellenado con los valores actuales. Al guardar los cambios, se actualiza el documento correspondiente en la colección health.
+
+Eliminar Documento: Permite eliminar uno o varios documentos seleccionados de la base de datos.
+
+Visualizar Documentos: Muestra una tabla con los documentos almacenados en la base de datos. También ofrece opciones de filtrado por edad y la posibilidad de deshacer el filtro.
