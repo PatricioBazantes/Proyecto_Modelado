@@ -1,0 +1,105 @@
+age,anxiety,course,depression,gender,marital_status,panic_attack,timestamp
+18,No,Engineering,Yes,Female,No,Yes,8/7/2020 12:02
+21,Yes,Islamic education,No,Male,No,No,8/7/2020 12:04
+19,Yes,BIT,Yes,Male,No,Yes,8/7/2020 12:05
+22,No,Laws,Yes,Female,Yes,No,8/7/2020 12:06
+23,No,Mathemathics,No,Male,No,No,8/7/2020 12:13
+19,No,Engineering,No,Male,No,Yes,8/7/2020 12:31
+23,No,Pendidikan islam,Yes,Female,Yes,Yes,8/7/2020 12:32
+18,Yes,BCS,No,Female,No,No,8/7/2020 12:33
+19,No,Human Resources,No,Female,No,No,8/7/2020 12:35
+18,Yes,Irkhs,No,Male,No,Yes,8/7/2020 12:39
+20,No,Psychology,No,Female,No,No,8/7/2020 12:39
+24,No,Engineering,Yes,Female,Yes,No,8/7/2020 12:39
+18,No,BCS,Yes,Female,No,No,8/7/2020 12:40
+19,No,Engineering,No,Male,No,No,8/7/2020 12:41
+18,Yes,KENMS,No,Female,No,No,8/7/2020 12:43
+24,No,BCS,No,Male,No,No,8/7/2020 12:43
+24,No,Accounting ,No,Female,No,No,8/7/2020 12:46
+24,Yes,ENM,Yes,Female,Yes,Yes,8/7/2020 12:52
+20,Yes,BIT,No,Female,No,No,8/7/2020 13:05
+18,Yes,Marine science,Yes,Female,Yes,Yes,8/7/2020 13:07
+19,No,Engineering,No,Female,No,Yes,8/7/2020 13:12
+18,No,KOE,No,Female,No,No,8/7/2020 13:13
+24,No,BCS,No,Female,No,No,8/7/2020 13:13
+24,No,Engineering,No,Female,No,No,8/7/2020 13:15
+23,Yes,BCS,Yes,Female,No,Yes,8/7/2020 13:17
+18,No,Banking Studies,No,Female,No,No,8/7/2020 13:29
+19,No,Engineering,No,Female,No,No,8/7/2020 13:35
+18,Yes,Engineering,Yes,Male,Yes,No,8/7/2020 13:41
+24,Yes,BIT,Yes,Female,Yes,Yes,8/7/2020 13:58
+24,No,BCS,No,Female,No,No,8/7/2020 14:05
+23,No,Business Administration,No,Female,No,No,8/7/2020 14:27
+18,No,BCS,No,Male,No,No,8/7/2020 14:29
+19,No,BCS,No,Male,No,Yes,8/7/2020 14:29
+18,Yes,BCS,Yes,Male,Yes,No,8/7/2020 14:31
+19,Yes,BIT,Yes,Female,No,Yes,8/7/2020 14:41
+18,No,Engineering,No,Female,No,No,8/7/2020 14:43
+18,Yes,Law,Yes,Female,No,No,8/7/2020 14:43
+19,Yes,BIT,Yes,Female,No,Yes,8/7/2020 14:45
+18,No,KIRKHS,No,Female,No,No,8/7/2020 14:47
+24,No,Engineering,Yes,Female,Yes,Yes,8/7/2020 14:56
+24,Yes,BIT,No,Female,No,No,8/7/2020 14:57
+22,No,Engineering,No,Female,No,No,8/7/2020 14:57
+20,No,Usuluddin ,Yes,Female,No,No,8/7/2020 14:58
+,No,BIT,No,Male,No,No,8/7/2020 15:07
+23,No,TAASL,No,Male,No,Yes,8/7/2020 15:08
+18,Yes,BCS,No,Male,No,Yes,8/7/2020 15:09
+19,Yes,Engineering,No,Female,No,No,8/7/2020 15:12
+18,No,Engine,No,Female,No,No,8/7/2020 15:14
+24,No,BCS,Yes,Male,No,No,8/7/2020 15:14
+24,No,BCS,No,Female,No,Yes,8/7/2020 15:18
+23,No,ALA,Yes,Female,Yes,Yes,8/7/2020 15:27
+18,Yes,BCS,No,Female,No,No,8/7/2020 15:37
+19,No,Biomedical science,No,Female,No,No,8/7/2020 15:47
+20,Yes,koe,Yes,Female,Yes,Yes,8/7/2020 15:48
+19,No,BCS,Yes,Female,No,Yes,8/7/2020 15:57
+21,No,BCS,No,Male,No,No,8/7/2020 15:58
+23,No,Kirkhs,No,Male,No,No,8/7/2020 16:08
+20,Yes,BENL,Yes,Female,No,No,8/7/2020 16:21
+18,No,BCS,No,Female,No,No,8/7/2020 16:22
+23,No,Benl,No,Female,No,No,8/7/2020 16:34
+18,No,IT,No,Female,No,Yes,8/7/2020 16:34
+19,No,BCS,No,Female,No,No,8/7/2020 16:53
+18,No,CTS,No,Female,No,Yes,8/7/2020 17:05
+24,No,engin,No,Female,No,Yes,8/7/2020 17:37
+24,No,Engine,No,Female,No,No,8/7/2020 17:46
+23,Yes,Econs,Yes,Female,No,No,8/7/2020 17:50
+18,Yes,KOE,No,Female,No,No,8/7/2020 18:10
+19,No,MHSC,Yes,Male,Yes,Yes,8/7/2020 18:11
+18,No,Malcom,Yes,Female,No,No,8/7/2020 19:05
+24,Yes,Kop,No,Female,No,No,8/7/2020 19:32
+24,No,Biomedical science,No,Female,No,No,8/7/2020 20:36
+18,No,Laws,No,Female,No,Yes,8/7/2020 21:21
+19,No,BIT,Yes,Female,Yes,No,8/7/2020 22:35
+18,No,Biomedical science,No,Male,No,No,9/7/2020 6:57
+24,Yes,BIT,No,Male,No,No,9/7/2020 11:43
+24,Yes,KOE,No,Female,No,Yes,9/7/2020 11:57
+23,No,Engineering,Yes,Female,No,No,9/7/2020 13:15
+18,No,Human Sciences ,No,Female,No,Yes,9/7/2020 18:24
+19,No,Biotechnology,No,Female,No,No,13/07/2020 10:07:32
+18,No,Engineering,No,Female,No,No,13/07/2020 10:10:30
+24,Yes,Communication ,Yes,Female,Yes,Yes,13/07/2020 10:11:26
+24,No,Diploma Nursing,No,Female,No,No,13/07/2020 10:12:18
+19,Yes,Engineering,Yes,Female,No,No,13/07/2020 10:12:26
+19,No,Pendidikan Islam ,No,Female,No,No,13/07/2020 10:12:28
+23,No,Radiography,No,Male,No,No,13/07/2020 10:14:46
+18,Yes,psychology,Yes,Female,No,No,13/07/2020 10:33:47
+19,No,Fiqh fatwa ,No,Female,No,No,13/07/2020 10:34:08
+18,Yes,psychology,Yes,Female,No,Yes,13/07/2020 11:46:13
+24,Yes,BIT,No,Male,No,No,13/07/2020 11:49:02
+24,No,Engineering,No,Male,No,Yes,13/07/2020 11:54:58
+23,No,DIPLOMA TESL,No,Female,No,Yes,13/07/2020 13:57:11
+18,Yes,Koe,No,Male,No,No,13/07/2020 14:38:12
+19,No,KOE,Yes,Female,Yes,No,13/07/2020 14:48:05
+18,No,BENL,Yes,Female,No,No,13/07/2020 16:15:13
+24,No,Fiqh,No,Female,No,Yes,13/07/2020 17:30:44
+18,No,Islamic Education,No,Female,No,No,13/07/2020 19:08:32
+21,Yes,BCS,No,Female,No,No,13/07/2020 19:56:49
+18,Yes,Engineering,Yes,Male,No,No,13/07/2020 21:21:42
+19,No,Nursing ,Yes,Female,Yes,Yes,13/07/2020 21:22:56
+25,Yes,Pendidikan Islam,Yes,male,Yes,Yes,13/07/2020 21:23:57
+30,Yes,Medicina,Yes,male,Yes,Yes,8/7/2023 13:01
+18,Yes,Computation,Yes,female,Yes,Yes,8/7/2023 12:10
+19,Yes,Ingenieria,Yes,female,Yes,Yes,8/7/2023 12:59
+23,Yes,Medicina,Yes,male,Yes,Yes,18/7/2023 12:01
